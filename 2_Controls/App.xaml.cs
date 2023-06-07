@@ -13,5 +13,6 @@ namespace _2_Controls
     /// </summary>
     public partial class App:Application
     {
+
     }
 }

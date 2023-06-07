@@ -5,39 +5,57 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_2_Controls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="570">
-    <Grid>
+        Title="MainWindow" Height="360" Width="570"
+                           MinHeight="200" MinWidth="225">
+    <Grid RenderTransformOrigin="0.505,0.486">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <Label >Name:</Label>
-        <TextBox Background="LightSlateGray" Grid.Column="1"/>
-        <Label Grid.Row="1">Surname:</Label>
-        <TextBox Background="LightSlateGray" Grid.Row="1" Grid.Column="1"/>
-        <Label Grid.Row="2" Content="Contact &#xD;&#xA;information:"/>
-        <TextBox Background="LightSlateGray" Grid.Row="2" Grid.Column="1"/>
-        <RepeatButton Name="peopleCount" ClickMode="Release" BorderThickness="1,5,1,1" Click="Add_Click" Grid.Column="2" Width="Auto" HorizontalAlignment="Left">Add Person</RepeatButton>
-        <TextBlock Width="40" Background="DimGray" x:Name="txtBlock" Grid.Column="3" Grid.ColumnSpan="4" ></TextBlock>
-        
-        <Label Grid.Row="3">Type place</Label>
-        <StackPanel Name="radioBtn" Orientation="Horizontal" Grid.Row="3" Grid.Column="1" Margin="4">
-            <RadioButton GroupName="types">Econom</RadioButton>
-            <RadioButton GroupName="types">Standart</RadioButton>
-            <RadioButton GroupName="types">Premium</RadioButton>
-        </StackPanel>
-        <Label Grid.Row="4" >Duration of living in hotel:</Label>
-        <Calendar Grid.Column="1" Grid.Row="4" SelectionMode="MultipleRange"/>
-        
-    </Grid>
 
+        <Label x:Name="labelName" >Name:</Label>
+        <TextBox x:Name="nameTxtBox" Background="LightSlateGray" Grid.Column="1"/>
+        <Label x:Name="labelSurname" Grid.Row="1">Surname:</Label>
+        <TextBox x:Name="surnameTxtBox" Background="LightSlateGray" Grid.Row="1" Grid.Column="1"/>
+        <Label x:Name="labelContact" Grid.Row="2" Content="Contact &#xD;&#xA;information:"/>
+        <TextBox x:Name="contactTxtBox" Background="LightSlateGray" Grid.Row="2" Grid.Column="1"/>
+        <!--<RepeatButton x:Name="addPeople" ClickMode="Release" BorderThickness="1,5,1,1" Click="Add_Click" Grid.Column="2" Width="Auto" HorizontalAlignment="Left">Add Person</RepeatButton>
+        <TextBlock Width="40" Background="DimGray" x:Name="txtBlock" Grid.Column="3" Grid.ColumnSpan="4" ></TextBlock>-->
+
+        <StackPanel Grid.Column="2">
+            <TextBox x:Name="txtBoxCount" IsReadOnly="True" Text="0" />
+            <RepeatButton Background="Black" Foreground="White" Content="Add" Click="RepeatButton_Click" Delay="500" Interval="100">
+                <RepeatButton.Resources>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="FontSize" Value="20" />
+                    </Style>
+                </RepeatButton.Resources>
+            </RepeatButton>
+        </StackPanel>
+
+        <Label Grid.Row="3">Type class</Label>
+
+        <StackPanel Name="radioBtn" Orientation="Horizontal" Grid.Row="3" Grid.Column="1" Margin="4">
+            <RadioButton x:Name = "economRBtn" GroupName="types">Econom</RadioButton>
+            <RadioButton x:Name = "standartRBtn" GroupName="types">Standart</RadioButton>
+            <RadioButton x:Name ="premiumRBtn"  GroupName="types">Premium</RadioButton>
+        </StackPanel>
+
+        <Label Grid.Row="4" >Duration of living in hotel:</Label>
+        <StackPanel Grid.Column="1" Grid.Row="4">
+            <Calendar x:Name="calendar" VerticalAlignment="Top" SelectionMode="MultipleRange"/>
+            <Button Click="showSelectionBtn">Show Selected Dates</Button>
+        </StackPanel>
+        <Button Grid.Row="4" Click="SaveBtn_Click" >Save</Button>
+    </Grid>
+    
 </Window>
