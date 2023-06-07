@@ -24,5 +24,14 @@ namespace _2_Controls
         {
             InitializeComponent();
         }
+
+        private void Add_Click(object sender, RoutedEventArgs e)
+        {
+            int tmp = 0;
+            //if(int.Parse(txtBlock.Content() < 12)
+            //{
+
+            //}
+        }
     }
 }

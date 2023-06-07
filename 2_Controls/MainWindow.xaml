@@ -5,7 +5,39 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_2_Controls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="570"
+        Title="MainWindow" Height="450" Width="570">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Label >Name:</Label>
+        <TextBox Background="LightSlateGray" Grid.Column="1"/>
+        <Label Grid.Row="1">Surname:</Label>
+        <TextBox Background="LightSlateGray" Grid.Row="1" Grid.Column="1"/>
+        <Label Grid.Row="2" Content="Contact &#xD;&#xA;information:"/>
+        <TextBox Background="LightSlateGray" Grid.Row="2" Grid.Column="1"/>
+        <RepeatButton Name="peopleCount" ClickMode="Release" BorderThickness="1,5,1,1" Click="Add_Click" Grid.Column="2" Width="Auto" HorizontalAlignment="Left">Add Person</RepeatButton>
+        <TextBlock Width="40" Background="DimGray" x:Name="txtBlock" Grid.Column="3" Grid.ColumnSpan="4" ></TextBlock>
         
+        <Label Grid.Row="3">Type place</Label>
+        <StackPanel Name="radioBtn" Orientation="Horizontal" Grid.Row="3" Grid.Column="1" Margin="4">
+            <RadioButton GroupName="types">Econom</RadioButton>
+            <RadioButton GroupName="types">Standart</RadioButton>
+            <RadioButton GroupName="types">Premium</RadioButton>
+        </StackPanel>
+        <Label Grid.Row="4" >Duration of living in hotel:</Label>
+        <Calendar Grid.Column="1" Grid.Row="4" SelectionMode="MultipleRange"/>
+        
+    </Grid>
+
 </Window>
