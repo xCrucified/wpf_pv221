@@ -5,8 +5,44 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_01_Intro"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="450" Width="600"
+                           MinHeight="300" MinWidth="300">
 
-    </Grid>
+
+    <DockPanel LastChildFill="True" Margin="5">
+        <DockPanel DockPanel.Dock="Top" LastChildFill="False" Height="25" >
+            <Button Content="134534" DockPanel.Dock="Left" />
+            <Button Content="2wtwrtew" DockPanel.Dock="Left" />
+            <Button Content="3wrtwertw" DockPanel.Dock="Right" />
+            <Button Content="4qwrqewr" DockPanel.Dock="Right" />
+
+        </DockPanel>
+        <DockPanel LastChildFill="False" DockPanel.Dock="Bottom">
+            <Button Content="134534" DockPanel.Dock="Right" />
+            <Button Content="2wtwrtew" DockPanel.Dock="Right" />
+            <Button Content="3wrtwertw" DockPanel.Dock="Right" />
+        </DockPanel>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+
+                <ColumnDefinition Width="265*"/>
+                <ColumnDefinition Width="300*"/>
+                <ColumnDefinition Width="316*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel>
+                <Button Height="30"></Button>
+                <Button Height="20"></Button>
+                <Button Height="40"></Button>
+                <Button Height="30"></Button>
+
+            </StackPanel>
+            <Label Content="Rivne News" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="88,0,0,0" Height="26" Width="71"/>
+
+        </Grid>
+
+
+
+    </DockPanel>
+
 </Window>
