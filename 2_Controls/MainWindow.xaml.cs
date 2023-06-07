@@ -31,7 +31,6 @@ namespace _2_Controls
             //if(int.Parse(txtBlock.Content() < 12)
             //{
 
-            //}
         }
     }
 }
