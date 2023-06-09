@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -22,6 +24,42 @@ namespace _2_Controls
         public Window1()
         {
             InitializeComponent();
+        }
+
+        private void cancelBtnCLick(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void applyBtnCLick(object sender, RoutedEventArgs e)
+        {
+           SaveFile();
+        }
+
+        private void ReadFile()
+        {
+
+        }
+        private void SaveFile()
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = ".txt";
+
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                string filePath = saveFileDialog.FileName;
+                string textToWrite = @$"
+Name: {nameTxtBoxSecond.Text}
+Surname: {surnameTxtBoxSecond.Text}
+Contact Information: {contactTxtBoxSecond}
+Count People: {countPeopleTxtBoxSecond}
+Type Class: {countPeopleTxtBoxSecond}
+Duration of living: {livingTxtBoxSecond}.
+";
+
+                File.WriteAllText(filePath, textToWrite);
+                MessageBox.Show("File was saved.");
+            }
         }
     }
 }

@@ -5,19 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_2_Controls"
         mc:Ignorable="d"
-        Title="Progresing..." Height="450" Width="450">
+        Title="Progresing..." Height="230" Width="450"
+                              MinHeight="176" MinWidth="210">
     <Grid>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="4*"/>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
+        <Label Grid.Row="0" Content="Name: "/>
+        <Label Grid.Row="1" Content="Surname: "/>
+        <Label Grid.Row="2" Content="Contact info:" />
+        <Label Grid.Row="3" Content="Type class:" />
+        <Label Grid.Row="4" Content="Duration of living:" />
+        <Label Grid.Row="5" Content="Count of people: " />
 
-        <TextBox Grid.Column="1" />
+        <TextBox x:Name="nameTxtBoxSecond" Grid.Column="1" Grid.ColumnSpan="2" Background="DimGray"/>
+        <TextBox x:Name="surnameTxtBoxSecond" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" Background="DimGray"/>
+        <TextBox x:Name="contactTxtBoxSecond" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2" Background="DimGray"/>
+        <TextBox x:Name="classesTxtBoxSecond" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="3" Background="DimGray"/>
+        <TextBox x:Name="livingTxtBoxSecond" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="4" Background="DimGray"/>
+        <TextBox x:Name="countPeopleTxtBoxSecond" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="5" Background="DimGray"/>
+        
+        <Button Grid.Row="6" Grid.Column="2" Margin="3" Content="Apply" Click="applyBtnCLick"/>
+        <Button Grid.Row="6" Grid.Column="1" Margin="3" Content="Cancel" Click="cancelBtnCLick" />
     </Grid>
 </Window>

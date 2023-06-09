@@ -9,11 +9,12 @@
                            MinHeight="200" MinWidth="225">
     <Grid RenderTransformOrigin="0.505,0.486">
         <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -31,12 +32,12 @@
         <!--<RepeatButton x:Name="addPeople" ClickMode="Release" BorderThickness="1,5,1,1" Click="Add_Click" Grid.Column="2" Width="Auto" HorizontalAlignment="Left">Add Person</RepeatButton>
         <TextBlock Width="40" Background="DimGray" x:Name="txtBlock" Grid.Column="3" Grid.ColumnSpan="4" ></TextBlock>-->
 
-        <StackPanel Grid.Column="2">
+        <StackPanel Grid.Column="2" Grid.RowSpan="2">
             <TextBox x:Name="txtBoxCount" IsReadOnly="True" Text="0" />
             <RepeatButton Background="Black" Foreground="White" Content="Add" Click="RepeatButton_Click" Delay="500" Interval="100">
                 <RepeatButton.Resources>
                     <Style TargetType="TextBlock">
-                        <Setter Property="FontSize" Value="20" />
+                        <Setter Property="FontSize"  Value="20" />
                     </Style>
                 </RepeatButton.Resources>
             </RepeatButton>
@@ -45,17 +46,20 @@
         <Label Grid.Row="3">Type class</Label>
 
         <StackPanel Name="radioBtn" Orientation="Horizontal" Grid.Row="3" Grid.Column="1" Margin="4">
-            <RadioButton x:Name = "economRBtn" GroupName="types">Econom</RadioButton>
-            <RadioButton x:Name = "standartRBtn" GroupName="types">Standart</RadioButton>
-            <RadioButton x:Name ="premiumRBtn"  GroupName="types">Premium</RadioButton>
+            <RadioButton Name = "economRBtn" IsChecked="False" GroupName="types">Econom</RadioButton>
+            <RadioButton Name = "standartRBtn" IsChecked="False" GroupName="types">Standart</RadioButton>
+            <RadioButton Name = "premiumRBtn" IsChecked="False"  GroupName="types">Premium</RadioButton>
         </StackPanel>
 
         <Label Grid.Row="4" >Duration of living in hotel:</Label>
         <StackPanel Grid.Column="1" Grid.Row="4">
             <Calendar x:Name="calendar" VerticalAlignment="Top" SelectionMode="MultipleRange"/>
-            <Button Click="showSelectionBtn">Show Selected Dates</Button>
         </StackPanel>
-        <Button Grid.Row="4" Click="SaveBtn_Click" >Save</Button>
+
+        <StackPanel Grid.Column="2" Grid.Row="2">
+            <Button Click="applyBtn" Content="Apply" />
+        </StackPanel>
+        
     </Grid>
     
 </Window>

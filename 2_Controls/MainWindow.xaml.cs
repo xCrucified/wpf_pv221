@@ -40,15 +40,34 @@ namespace _2_Controls
             txtBoxCount.Text = counts.ToString();
         }
 
-        private void showSelectionBtn(object sender, RoutedEventArgs e)
+        private void applyBtn(object sender, RoutedEventArgs e)
         {
-            if (calendar.SelectedDate != null)
-                MessageBox.Show($"From: {calendar.SelectedDates.First()}\nTo: {calendar.SelectedDates.Last()}", "Selected Dates");
-        }
+            Window1 window1 = new Window1();
 
-        private void SaveBtn_Click(object sender, RoutedEventArgs e)
-        {
-            
+            window1.nameTxtBoxSecond.Text = nameTxtBox.Text;
+            window1.surnameTxtBoxSecond.Text = surnameTxtBox.Text;
+            window1.contactTxtBoxSecond.Text = contactTxtBox.Text;
+            window1.countPeopleTxtBoxSecond.Text = counts.ToString();
+
+            if (economRBtn.IsChecked == true)
+            {
+                window1.classesTxtBoxSecond.Text = $"Econom class";
+            }
+            if (standartRBtn.IsChecked == true)
+            {
+                window1.classesTxtBoxSecond.Text = $"Standart class";
+            }
+            if (premiumRBtn.IsChecked == true)
+            {
+                window1.classesTxtBoxSecond.Text = $"Premium class";
+            }
+
+            if (calendar.SelectedDate != null) {
+                window1.livingTxtBoxSecond.Text = $"From: {calendar.SelectedDates.First()}\nTo: {calendar.SelectedDates.Last()}";
+            }
+
+            window1.Show();
+
         }
     }
 }
