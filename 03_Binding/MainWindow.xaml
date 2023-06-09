@@ -1,0 +1,41 @@
+﻿<Window x:Class="_03_Binding.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_03_Binding"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="600">
+    <Grid Margin="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="56"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label>Alpha: </Label>
+        <Label Grid.Row="1" >Red:</Label>
+        <Label Grid.Row="2">Green:</Label>
+        <Label Grid.Row="3">Blue:</Label>
+        
+        <Label x:Name="Capacity" Grid.Column="1" HorizontalAlignment="Center">0</Label>
+        <Label x:Name="redNumb"  HorizontalAlignment="Center" Grid.Column="1" Grid.Row="1">0</Label>
+        <Label x:Name="greenNumb" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="2">0</Label>
+        <Label x:Name="blueNumb" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="3">0</Label>
+        
+        <Slider Maximum="100" Value="capacity" x:Name="capacitySlider"  Grid.Column="2"> </Slider>
+        <Slider Maximum="100" Value="red" x:Name="redSlider" Grid.Column="2" Grid.Row="1"></Slider>
+        <Slider Maximum="100" Value="green" x:Name="greenSlider" Grid.Column="2" Grid.Row="2"></Slider>
+        <Slider Maximum="100" Value="blue" x:Name="blueSlider" Grid.Column="2" Grid.Row="3"></Slider>
+
+        <Border Grid.Column="3" Background="{Binding ElementName=capacitySlider}" Grid.RowSpan="4" BorderThickness="20" ></Border>
+        
+    </Grid>
+</Window>
