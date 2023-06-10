@@ -12,7 +12,7 @@
             <ColumnDefinition Width="56"/>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="Auto"/>
-        </Grid.ColumnDefinitions>
+        </Grid.ColumnDefinitions>   
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -29,13 +29,13 @@
         <Label x:Name="redNumb"  HorizontalAlignment="Center" Grid.Column="1" Grid.Row="1">0</Label>
         <Label x:Name="greenNumb" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="2">0</Label>
         <Label x:Name="blueNumb" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="3">0</Label>
-        
-        <Slider Maximum="100" Value="capacity" x:Name="capacitySlider"  Grid.Column="2"> </Slider>
-        <Slider Maximum="100" Value="red" x:Name="redSlider" Grid.Column="2" Grid.Row="1"></Slider>
-        <Slider Maximum="100" Value="green" x:Name="greenSlider" Grid.Column="2" Grid.Row="2"></Slider>
-        <Slider Maximum="100" Value="blue" x:Name="blueSlider" Grid.Column="2" Grid.Row="3"></Slider>
 
-        <Border Grid.Column="3" Background="{Binding ElementName=capacitySlider}" Grid.RowSpan="4" BorderThickness="20" ></Border>
+        <Slider Minimum="0" Maximum="255" Value="{Binding Alpha}" x:Name="alphaSlider" Grid.Column="2" Margin="5" TickFrequency="5" IsSnapToTickEnabled="True"/>
+        <Slider Minimum="0" Maximum="255" Value="{Binding Red}"   x:Name="redSLider" Grid.Column="2" Grid.Row="1" Margin="5" TickFrequency="5" IsSnapToTickEnabled="True"/>
+        <Slider Minimum="0" Maximum="255" Value="{Binding Green}" x:Name="greenSLider" Grid.Column="2" Grid.Row="2" Margin="5" TickFrequency="5" IsSnapToTickEnabled="True"/>
+        <Slider Minimum="0" Maximum="255" Value="{Binding Blue}"  x:Name="blueSLider" Grid.Column="2" Grid.Row="3" Margin="5" TickFrequency="5" IsSnapToTickEnabled="True"/>
+
+        <Border x:Name="border" Grid.Column="4" Grid.RowSpan="3" Background="{Binding Value}" BorderThickness="20" ></Border>
         
     </Grid>
 </Window>

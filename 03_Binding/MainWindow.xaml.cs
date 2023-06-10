@@ -1,6 +1,8 @@
 ﻿using PropertyChanged;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,17 +26,20 @@ namespace _03_Binding
         public MainWindow()
         {
             InitializeComponent();
+            ViewModel viewModel = new ViewModel();
+            DataContext = viewModel;
         }
-
-
     }
+    
     [PropertyChanged.AddINotifyPropertyChangedInterface]
     public class ViewModel
     {
-        public int ColorRed{get; set; }
-        public int ColorGreen{get; set; }
-        public int ColorBlue{get; set;}
-
+        public byte Alpha { get; set; }
+        public byte Red { get; set; }
+        public byte Green { get; set; }
+        public byte Blue { get; set; }
+        public Color CurrentColor => Color.FromArgb(Alpha, Red, Green, Blue);
 
     }
+
 }
