@@ -23,8 +23,8 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="6*"/>
         </Grid.RowDefinitions>
-        
-        <Label>Alpha: </Label>
+
+        <Label>Alpha:</Label>
         <Label Grid.Row="1" >Red:</Label>
         <Label Grid.Row="2">Green:</Label>
         <Label Grid.Row="3">Blue:</Label>
@@ -45,16 +45,12 @@
             </Border.Background>
         </Border>
 
-        <Button Grid.Row="4" Grid.ColumnSpan="2" Margin="10" x:Name="addClick">Add</Button>
-        <Button Grid.Row="4" Grid.Column="2" Margin="10" x:Name="cancelClick">Cancel</Button>
-        
-        <Border BorderBrush="Gray" BorderThickness="1"  Grid.Row="5" Grid.ColumnSpan="4">
-            <StackPanel>
-                <ListBox>
-                    <TextBlock x:Name="colorList" Text="{Binding addClick}" DockPanel.Dock="Bottom" Grid.Row="2"></TextBlock>
-                </ListBox>
-            </StackPanel>
+        <Button Grid.Row="4" Grid.ColumnSpan="2" Margin="10" Click="addBtn_Click">Add</Button>
+        <Button Grid.Row="4" Grid.Column="2" Margin="10" Click="deleteBtn_Click">Delete</Button>
+
+        <Border BorderBrush="Gray" BorderThickness="1" Grid.Row="5" Grid.ColumnSpan="4">
+            <ListBox x:Name="colorList" ItemsSource="{Binding Path=ListColor}" SelectedItem="{Binding Path=SelectedColor}"></ListBox>
         </Border>
+        
     </Grid>
 </Window>
-<!--ItemsSource="{Binding Path=ListColor}" SelectedItem="{Binding Path=SelectedColor}"-->

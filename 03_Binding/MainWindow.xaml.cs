@@ -25,29 +25,41 @@ namespace _03_Binding
 
     public partial class MainWindow:Window
     {
-        
+        ViewModel viewModel;
         public MainWindow()
         {
             InitializeComponent();
-            ViewModel viewModel = new ViewModel();
+            viewModel = new ViewModel();
             this.DataContext = viewModel;
         }
 
         private void deleteBtn_Click(object sender, RoutedEventArgs e)
         {
+            viewModel.Delete();
             
         }
 
         private void addBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            viewModel.Add();
         }
     }
 
     public class ViewModel : INotifyPropertyChanged
     {
-        private ObservableCollection<Color> listColor = new();
+        private ObservableCollection<Color> listColor = new ObservableCollection<Color>();
+        public IEnumerable ListColor => listColor;
 
+        public void Add()
+        {
+            listColor.Add(this.CurrentColor);
+        }
+        public void Delete()
+        {
+            listColor.Remove(SelectedColor);
+        }
+
+        public Color SelectedColor { get; set; }
         private byte alpha;
         private byte red;
         private byte green;
@@ -94,21 +106,10 @@ namespace _03_Binding
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         public Color CurrentColor => Color.FromArgb(Alpha, Red, Green, Blue);
-        private void addClick()
-        {
-            Color color = CurrentColor; // Приклад кольору (червоний)
-
-            // Конвертація в шістнадцятковий код з використанням великих літер (наприклад, "#FF0000")
-            color.GetHashCode();
-
-            // Конвертація в шістнадцятковий код з використанням малих літер (наприклад, "#ff0000")
-            
-        }
- 
-
+       
     }
-
 }
