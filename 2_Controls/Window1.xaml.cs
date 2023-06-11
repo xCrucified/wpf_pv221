@@ -33,32 +33,20 @@ namespace _2_Controls
 
         private void applyBtnCLick(object sender, RoutedEventArgs e)
         {
-           SaveFile();
-        }
 
-        private void ReadFile()
-        {
+            string data = $"{nameTxtBoxSecond.Text} \n {surnameTxtBoxSecond.Text} \n {classesTxtBoxSecond.Text} \n {contactTxtBoxSecond.Text} \n {countPeopleTxtBoxSecond.Text} \n {livingTxtBoxSecond.Text}";
 
-        }
-        private void SaveFile()
-        {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = ".txt";
+            string filePath = "data.txt";
 
-            if (saveFileDialog.ShowDialog() == true)
+            try
             {
-                string filePath = saveFileDialog.FileName;
-                string textToWrite = @$"
-Name: {nameTxtBoxSecond.Text}
-Surname: {surnameTxtBoxSecond.Text}
-Contact Information: {contactTxtBoxSecond}
-Count People: {countPeopleTxtBoxSecond}
-Type Class: {countPeopleTxtBoxSecond}
-Duration of living: {livingTxtBoxSecond}.
-";
+                File.WriteAllText(filePath, data);
 
-                File.WriteAllText(filePath, textToWrite);
-                MessageBox.Show("File was saved.");
+                MessageBox.Show("Successfully.");
+            }
+            catch (IOException ex)
+            {
+                MessageBox.Show("Error : ");
             }
         }
     }

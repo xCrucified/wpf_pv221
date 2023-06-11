@@ -51,8 +51,6 @@ namespace _03_Binding
         private ObservableCollection<Color> listColor = new ObservableCollection<Color>();
         public IEnumerable ListColor => listColor;
 
-       
-
         public void Add()
         {
             if (!listColor.Contains(CurrentColor))
