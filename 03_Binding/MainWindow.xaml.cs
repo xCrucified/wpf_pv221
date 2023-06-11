@@ -36,6 +36,7 @@ namespace _03_Binding
         private void deleteBtn_Click(object sender, RoutedEventArgs e)
         {
             viewModel.Delete();
+
             
         }
 
@@ -50,9 +51,14 @@ namespace _03_Binding
         private ObservableCollection<Color> listColor = new ObservableCollection<Color>();
         public IEnumerable ListColor => listColor;
 
+       
+
         public void Add()
         {
-            listColor.Add(this.CurrentColor);
+            if (!listColor.Contains(CurrentColor))
+            {
+                listColor.Add(CurrentColor);
+            }
         }
         public void Delete()
         {
@@ -106,10 +112,11 @@ namespace _03_Binding
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-
         public event PropertyChangedEventHandler PropertyChanged;
-
         public Color CurrentColor => Color.FromArgb(Alpha, Red, Green, Blue);
+
+
+
        
     }
 }
