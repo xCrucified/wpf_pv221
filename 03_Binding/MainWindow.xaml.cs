@@ -73,7 +73,7 @@ namespace _03_Binding
         {
             get { return alpha; }
             set
-            {
+            {   
                 alpha = value;
                 OnPropertyChanged(nameof(CurrentColor));
             }
@@ -96,6 +96,7 @@ namespace _03_Binding
                 OnPropertyChanged(nameof(CurrentColor));
             }
         }
+        
         public byte Blue
         {
             get { return blue; }
@@ -110,6 +111,7 @@ namespace _03_Binding
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
         public event PropertyChangedEventHandler PropertyChanged;
         public Color CurrentColor => Color.FromArgb(Alpha, Red, Green, Blue);
 
