@@ -43,6 +43,7 @@ namespace _2_Controls
                 File.WriteAllText(filePath, data);
 
                 MessageBox.Show("Successfully.");
+                Close();
             }
             catch (IOException ex)
             {
