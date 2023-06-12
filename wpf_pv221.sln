@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02_Controls", "2_Controls\0
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03_Binding", "03_Binding\03_Binding.csproj", "{86B0F417-A52A-4848-80AF-CFF54968CAE7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04_FileViewerProgram", "04_FileViewerProgram\04_FileViewerProgram.csproj", "{8F32B8E3-369C-481E-A339-0B8178ACF1EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{86B0F417-A52A-4848-80AF-CFF54968CAE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86B0F417-A52A-4848-80AF-CFF54968CAE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86B0F417-A52A-4848-80AF-CFF54968CAE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F32B8E3-369C-481E-A339-0B8178ACF1EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F32B8E3-369C-481E-A339-0B8178ACF1EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F32B8E3-369C-481E-A339-0B8178ACF1EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F32B8E3-369C-481E-A339-0B8178ACF1EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

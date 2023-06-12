@@ -114,9 +114,5 @@ namespace _03_Binding
 
         public event PropertyChangedEventHandler PropertyChanged;
         public Color CurrentColor => Color.FromArgb(Alpha, Red, Green, Blue);
-
-
-
-       
     }
 }
