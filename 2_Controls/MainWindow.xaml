@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:_2_Controls"
         mc:Ignorable="d"
         Title="MainWindow" Height="360" Width="570"
-                           MinHeight="200" MinWidth="225">
+                           MinHeight="300" MinWidth="425">
     <Grid RenderTransformOrigin="0.505,0.486">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
@@ -57,7 +57,7 @@
         </StackPanel>
 
         <StackPanel Grid.Column="2" Grid.Row="2">
-            <Button Click="applyBtn" Content="Apply" />
+            <Button Click="applyBtn" Content="Apply" Height="55" />
         </StackPanel>
         
     </Grid>

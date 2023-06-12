@@ -21,6 +21,7 @@
             <RowDefinition Height="1*" />
             <RowDefinition Height="1*" />
             <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
         <Label Grid.Row="0" Content="Name: "/>
         <Label Grid.Row="1" Content="Surname: "/>
@@ -28,6 +29,7 @@
         <Label Grid.Row="3" Content="Type class:" />
         <Label Grid.Row="4" Content="Duration of living:" />
         <Label Grid.Row="5" Content="Count of people: " />
+        <Label Grid.Row="6" Content="Price:"/>
 
         <TextBox x:Name="nameTxtBoxSecond" Grid.Column="1" Grid.ColumnSpan="2" Background="DimGray"/>
         <TextBox x:Name="surnameTxtBoxSecond" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" Background="DimGray"/>
@@ -35,8 +37,9 @@
         <TextBox x:Name="classesTxtBoxSecond" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="3" Background="DimGray"/>
         <TextBox x:Name="livingTxtBoxSecond" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="4" Background="DimGray"/>
         <TextBox x:Name="countPeopleTxtBoxSecond" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="5" Background="DimGray"/>
+        <TextBox x:Name="priceTxtBoxSecond" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="2" Background="DimGray" IsReadOnly="True"/>
         
-        <Button Grid.Row="6" Grid.Column="2" Margin="3" Content="Apply" Click="applyBtnCLick"/>
-        <Button Grid.Row="6" Grid.Column="1" Margin="3" Content="Cancel" Click="cancelBtnCLick" />
+        <Button Grid.Row="7" Grid.Column="2" Margin="3" Content="Apply" Click="applyBtnCLick"/>
+        <Button Grid.Row="7" Grid.Column="1" Margin="3" Content="Cancel" Click="cancelBtnCLick" />
     </Grid>
 </Window>
