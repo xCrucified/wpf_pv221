@@ -34,7 +34,7 @@ namespace _2_Controls
         private void applyBtnCLick(object sender, RoutedEventArgs e)
         {
 
-            string data = $"{nameTxtBoxSecond.Text} \n {surnameTxtBoxSecond.Text} \n {classesTxtBoxSecond.Text} \n {contactTxtBoxSecond.Text} \n {countPeopleTxtBoxSecond.Text} \n {livingTxtBoxSecond.Text} \n ${priceTxtBoxSecond.Text}";
+            string data = $"Name: {nameTxtBoxSecond.Text}\nSurname: {surnameTxtBoxSecond.Text}\nClass: {classesTxtBoxSecond.Text}\nContact information: {contactTxtBoxSecond.Text}\nPeople's: {countPeopleTxtBoxSecond.Text}\nLiving duration: {livingTxtBoxSecond.Text}\nPrice: ${priceTxtBoxSecond.Text}";
 
             string filePath = "data.txt";
 
